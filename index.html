@@ -183,3 +183,43 @@ document.addEventListener('DOMContentLoaded', function(){
     })
 
 })
+<button id="botao-acessibilidade" class="btn btn-primary fw-bold">acessibilidade</button>
+<div id="acessibilidade">
+    <button id="botao-acessibilidade" class="btn btn-primary fw-bold">acessibilidade</button>
+    <div id="opcoes-acessibilidade">
+      <button id="aumentar-fonte" class="btn btn-primary fw-bold">A+</button>
+      <button id="diminuir-fonte" class="btn btn-primary fw-bold">A-</button>
+    </div>
+  </div>
+  <div id="acessibilidade" class="menu-acessibilidade">
+    <button id="botao-acessibilidade" class="btn btn-primary fw-bold rotacao-botao">acessibilidade</button>
+    <div id="opcoes-acessibilidade" class="opcoes-acessibilidade apresenta-lista">
+      <button id="aumentar-fonte" class="btn btn-primary fw-bold">A+</button>
+      <button id="diminuir-fonte" class="btn btn-primary fw-bold">A-</button>
+    </div>
+  </div>
+  .menu-acessibilidade{
+    position: fixed;
+    top:2rem;
+    right:20px;
+    z-index: 1000;
+}
+.rotacao-botao{ 
+    transform: rotate(-90deg);
+    transform-origin: right center;
+}
+.opcoes-acessibilidade{
+    margin-top:10px;
+    display: flex;
+    flex-direction: column;
+}
+.opcoes-acessibilidade button{
+    margin-bottom: 5px;
+}
+const botaoDeAcessibilidade = document.getElementById('botao-acessibilidade')
+const opcoesDeAcessibilidade = document.getElementById('opcoes-acessibilidade')
+botaoDeAcessibilidade.addEventListener('click', function (){
+    botaoDeAcessibilidade.classList.toggle('rotacao-botao');
+    opcoesDeAcessibilidade.classList.toggle('apresenta-lista')
+   })
+     
